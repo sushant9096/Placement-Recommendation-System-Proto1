@@ -4,10 +4,9 @@ import pandas as pd
 
 # <==== Code starts here ====>
 
-jobs_list = pd.read_hdf('models/jobs.hdf5', 'jobs', 'r')
-# similarity = pickle.load(open('./models/jobs-similarity.pkl', 'rb'))
+jobs_list = pd.read_hdf('src/models/jobs.hdf5', 'jobs', 'r')
 import h5py
-with h5py.File('models/jobs.hdf5', 'r') as f:
+with h5py.File('src/models/jobs.hdf5', 'r') as f:
     dset = f['similarity']
     similarity = dset
 
