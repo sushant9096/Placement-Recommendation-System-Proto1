@@ -6,7 +6,7 @@ Placement recommendation model has been trained using a dataset of 5,796 courses
 
 ## Tech Used 
 
-**Language:** Python (3.7)
+**Language:** Python (3.8.0)
 
 **Front-End:** Streamlit
 
