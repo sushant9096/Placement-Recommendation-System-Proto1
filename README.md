@@ -1,8 +1,8 @@
 # Placement-Recommendation-System
 
-A placement recommendation system using the Naukri.com jobs dataset which contains over 5,796 courses. 
+A placement recommendation system using the Naukri.com jobs dataset which contains over 5,796 jobs. 
 
-Placement recommendation model has been trained using a dataset of 5,796 courses!
+Placement recommendation model has been trained using a dataset of 5,796 jobs!
 
 ## Tech Used 
 
