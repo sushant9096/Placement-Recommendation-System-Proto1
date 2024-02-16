@@ -1,4 +1,6 @@
 # <==== Importing Dependencies ====>
+import re
+
 import streamlit as st
 import pandas as pd
 
@@ -12,7 +14,11 @@ with h5py.File('src/models/jobs.hdf5', 'r') as f:
 
 
     def recommend_job(job):
-        index = jobs_list[jobs_list['job_post'] == job].index[0]
+        for ind in jobs_list.index:
+            if re.search(job, jobs_list['job_post'][ind], re.IGNORECASE):
+                index = ind
+                break
+
         distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
         job_names = []
         company_names = []
@@ -59,10 +65,11 @@ with h5py.File('src/models/jobs.hdf5', 'r') as f:
                 unsafe_allow_html=True)
 
     job_list = jobs_list['job_post'].values
-    selected_course = st.selectbox(
-        "Type or select a job you like :",
-        jobs_list
-    )
+    selected_course = st.text_input("Enter Job Title",)
+    # selected_course = st.selectbox(
+    #     "Type or select a job you like :",
+    #     jobs_list
+    # )
 
     if st.button('Show Recommended Placements'):
         st.write("Recommended Placement based on your interests are :")
