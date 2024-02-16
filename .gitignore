@@ -2,3 +2,4 @@
 /src/data-scraping/geckodriver.log
 /src/models/jobs.hdf5
 /src/data-scraping/Coursera_courses.csv
+/src/data-scraping/Naukri_jobs.csv
